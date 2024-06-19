@@ -1,0 +1,25 @@
+---
+// import for white line
+import Line from "@/atoms/line/Line.astro"
+//ListItem -> each li in the maps
+import Listitem from "../../atoms/list-item/Listitem.astro"
+//Content of the header
+import { navlinks } from "@/content/headerContent/subHeader";
+
+---
+
+<section class=" flex flex-col items-center gap-2">
+    <Line />
+    <div class=" flex justify-between items-center gap-2 w-[80rem]" >
+        <a href="/" ><img src="/public/logo/logo.svg" alt="logo" class=" h-[2rem]"/></a>
+        <div class="h-[auto] w-[auto] flex justify-around items-center gap-[2rem]" >
+          {navlinks.map((link) => (
+           <Listitem>
+            <a href={link.href}>{link.name}</a>
+          </Listitem>
+         ))}
+        </div>
+        <Listitem>EN</Listitem>
+    </div>
+    <Line />
+</section>
