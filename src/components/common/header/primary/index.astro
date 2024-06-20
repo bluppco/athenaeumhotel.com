@@ -1,0 +1,29 @@
+---
+
+// IMPORT ASTRO ATOMS
+import Listitem from "@/atoms/header/list-item/index.astro"
+
+// IMPORT JSX CONTENT
+import  {navlinks} from "@/content/header/primary/index"
+
+---
+<header 
+	class="w-[540px]"
+>
+    <ul 
+		class="h-8 w-auto flex justify-around items-center gap-4"
+	>
+    	{
+      
+			navlinks.map( ( link ) => (
+
+				<Listitem>
+					<a href={ link.href }>{ link.name }</a>
+				</Listitem>
+
+        	))
+
+		}
+    </ul>
+</header>
+

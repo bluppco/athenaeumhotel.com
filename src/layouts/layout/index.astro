@@ -1,11 +1,11 @@
 ---
 
-//Type of Props
-interface Props {
-    title ?: String
-}
-const { title = "The Athenaeum Hotel" } = Astro.props as Props;
+// GET ASTRO PROPS
+const { 
 
+	title
+
+ } = Astro.props
 
 ---
 
@@ -15,10 +15,10 @@ const { title = "The Athenaeum Hotel" } = Astro.props as Props;
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<meta name="generator" content={ Astro.generator } />
+		<title>{ title }</title>
 	</head>
-	<body class="m-0 bg-white h-[500rem]" >
+	<body class="m-0 bg-white h-[8000px]" >
 		<slot />
 	</body>
 </html>

@@ -2,8 +2,8 @@
 //Content of Second Row ie Sub Header
 
 type NavLink = {
-  name: string;
   href: string;
+  name: string;
 };
 
 export const navlinks: NavLink[] = [

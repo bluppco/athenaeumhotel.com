@@ -2,8 +2,8 @@
 //Content of First Row ie Main Header
 
 type NavLink = {
-  name: string;
   href: string;
+  name: string;
 };
 
 export const navlinks: NavLink[] = [

@@ -1,0 +1,52 @@
+---
+
+// IMPORT ASTRO ATOMS
+import Line from "@/atoms/header/line/index.astro"
+
+// IMPORT ASTRO ATOMS
+import Listitem from "@/atoms/header/list-item/index.astro"
+
+// IMPORT JSX CONTENT
+import { navlinks } from "@/content/header/secondary/index";
+
+// IMPORT PICTURE ATOM
+import Picture from "@/atoms/picture/index.astro"
+
+---
+
+<div class="flex flex-col gap-2 items-center">
+	<Line />
+	<div 
+		class="flex gap-2 items-center justify-between w-[1280px]"
+	>
+		<a 
+			href="/" 
+		>
+		    <div 
+				class="h-8"
+			>
+				<Picture
+					alternative_text="The Athenaeum Hotel Logo" 
+					source="/public/logo/logo.svg" 
+				/>
+			</div>
+		</a>
+		<div 
+			class="h-[auto] w-[auto] flex justify-around items-center gap-[2rem]" 
+		>
+			{
+			
+			navlinks.map(( link ) => (
+				<Listitem>
+					<a href={link.href}>{link.name}</a>
+				</Listitem>
+			))
+			
+			}
+		</div>
+		<Listitem>
+			EN
+		</Listitem>
+	</div>
+	<Line />
+</div>
