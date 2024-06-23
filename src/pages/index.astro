@@ -1,15 +1,25 @@
 ---
 
+// IMPORT ASTRO LAYOUTS
+import Layout from "@/layouts/layout/index.astro"
+
 // IMPORT ASTRO COMPONENTS
 import Hero from "@/components/home/hero/index.astro"
-
-// IMPORT ASTRO LAYOUT
-import Layout from "../layouts/layout/index.astro"
+import PrimaryHeader from "@/components/common/header/primary/index.astro"
+import SecondaryHeader from "@/components/common/header/secondary/index.astro"
 
 ---
-<Layout 
+<Layout
+	description=""
+	image=""
 	title="The Athenaeum Hotel | A Luxury 5 star hotel in Mayfair"
 >
-	<Hero />
+	<section class="bg-hero_image w-full h-screen bg-no-repeat bg-center bg-cover">
+		<div class="bg-black w-full h-screen bg-opacity-25 pt-2 flex flex-col items-center gap-2">
+			<PrimaryHeader />
+			<SecondaryHeader />
+			<Hero />
+		</div>
+	</section>
 </Layout>
 

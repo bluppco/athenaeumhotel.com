@@ -1,11 +1,13 @@
 ---
 
 // GET ASTRO PROPS
-const { 
+const {
 
-	title
+	description,
+	image,
+	title,
 
- } = Astro.props
+} = Astro.props
 
 ---
 
@@ -13,12 +15,21 @@ const {
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={ Astro.generator } />
 		<title>{ title }</title>
+		<meta name="title" content={ title } />
+		<meta name="description" content={ description } />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={ title } />
+		<meta property="og:description" content={ description } />
+		<meta property="og:image" content={ image } />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={ title } />
+		<meta property="twitter:description" content={ description } />
+		<meta property="twitter:image" content={ image } />
+		<link rel="icon" type="image/x-icon" href="/favicon/favicon.svg">
 	</head>
-	<body class="m-0 bg-white h-[8000px]" >
+	<body>
 		<slot />
 	</body>
 </html>

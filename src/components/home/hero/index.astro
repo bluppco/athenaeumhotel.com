@@ -1,31 +1,13 @@
 ---
 
-// IMPORT ASTRO COMPONENT
-import MainHeader from "@/components/common/header/primary/index.astro"
-
-//IMPORT PICTURE ASTRO ATOM
+// IMPORT ASTRO ATOMS
 import Picture from "@/atoms/picture/index.astro"
-
-// IMPORT ASTRO COMPONENT
-import SubHeader from "@/components/common/header/seconday/index.astro"
 
 ---
 
-<section 
-    class="bg-heroImage w-full h-screen bg-no-repeat bg-center bg-cover"
->
-    <div 
-        class="bg-black w-full h-screen bg-opacity-25 pt-2 flex flex-col items-center gap-2"
-    >
-         <MainHeader/>
-         <SubHeader /> 
-        <div 
-            class="my-20 w-72 aspect-square"
-        >
-            <Picture 
-                alternative_text = "Athenaeum Hotel Image"
-                source = "/logo/logo.svg"
-            /> 
-        </div>
-    </div>
-</section>
+<div class="my-20 w-72 aspect-square">
+    <Picture
+        alternative_text = "Athenaeum Hotel Image"
+        source = "/logo/logo.svg"
+    />
+</div>
