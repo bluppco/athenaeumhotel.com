@@ -8,15 +8,12 @@ let header_data = await getCollection("secondary-header")
 header_data = header_data.sort( ( a, b ) => a.data.order - b.data.order )
 
 // IMPORT ASTRO ATOMS
-import Line from "@/atoms/header/line/index.astro"
 import ListItem from "@/atoms/header/list-item/index.astro"
 import Picture from "@/atoms/picture/index.astro"
 
 ---
 
-<div class="flex flex-col gap-2 items-center">
-	<Line />
-	<div class="flex gap-2 items-center justify-between w-[1280px]">
+	<div class="relative flex gap-2 items-center justify-between w-[1280px] h-16 border-y-2 border-white">
 		<a href="/">
 		    <div class="size-8">
 				<Picture
@@ -25,19 +22,18 @@ import Picture from "@/atoms/picture/index.astro"
 				/>
 			</div>
 		</a>
-		<div class="flex items-center gap-8">
+		<div class=" flex items-center gap-8 h-16">
 			{
 
 				header_data.map( ( item ) => {
 
 					return (
-						<li class="relative group list-none font-semibold font-serif text-[12.8px] text-white hover:opacity-65 transition-opacity uppercase py-2">
+						<li class=" group list-none font-bold font-sans text-[13.5px] text-white hover:text-opacity-65 transition-opacity uppercase py-5 h-16">
 							<a href={ "/" + item.data.href } aria-label={ "explore " + item.data.title }>{ item.data.title }</a>
 							{
-
 								item.data.has_dropdown &&
-								<div class="hidden group-hover:block group-hover:flex-col absolute p-4 bg-white left-0 z-20 top-9 w-fit gap-2">
-									<div class="flex gap-4">
+								<div class=" hidden group-hover:block group-hover:flex-col absolute p-4 bg-white left-0 z-20 top-14 w-[100%] gap-2">
+									<div class="flex justify-center items-center gap-4">
 										{
 
 											item.data.items.map( ( sub_item, sub_item_index ) => {
@@ -46,7 +42,9 @@ import Picture from "@/atoms/picture/index.astro"
 
 													<div class="py-2">
 														{/* <ListItem> */}
-															<a href={ "/" + sub_item.href } aria-label={ "explore" + sub_item.title } class="text-black">{ sub_item.title }</a>
+															<a href={ "/" + sub_item.href } aria-label={ "explore" + sub_item.title } class=" text-gray-600 hover:text-opacity-65 transition-opacity ">
+																{ sub_item.title }
+															</a>
 														{/* </ListItem> */}
 													</div>
 
@@ -66,7 +64,33 @@ import Picture from "@/atoms/picture/index.astro"
 
 			}
 		</div>
-		<ListItem>EN</ListItem>
+		<div class=" h-16 relative group ">
+			<div class=" flex justify-center items-center gap-1 py-6 cursor-pointer " >
+				<ListItem>
+					EN
+				</ListItem>
+				<div class=" h-4 w-4 " >
+					<Picture
+						alternative_text="down arrow image"	
+						source = "/icons/down_arrow.svg" 
+				    />
+				</div>
+			</div>
+			
+			<ul class=" hidden group-hover:block absolute border-2 border-white divide-y-2 -left-[27.5px] top-[62px] text-white font-semibold" >
+				<li class="px-4 py-2 hover:bg-white hover:text-[#3F5666] cursor-pointer">
+					US
+				</li>
+				<li class="px-4 py-2 hover:bg-white hover:text-[#3F5666] cursor-pointer">
+					AUS
+				</li>
+				<li class="px-4 py-2 hover:bg-white hover:text-[#3F5666] cursor-pointer">
+					CA
+				</li>
+				<li class="px-4 py-2 hover:bg-white hover:text-[#3F5666] cursor-pointer">
+					AR
+				</li>
+			</ul>
+		</div>
+		
 	</div>
-	<Line />
-</div>

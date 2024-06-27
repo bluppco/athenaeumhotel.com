@@ -1,0 +1,67 @@
+---
+
+// IMPORT PICTURE ATOM
+import Picture from "@/atoms/picture/index.astro"  
+
+// IMPORT ASTRO COLLECTION
+import { getCollection } from "astro:content";
+
+/* // IMPORT USE STATE 
+import React, { useState } from "react"; */
+
+// IMPORT REVIEW COLLECTION
+let review_data = await getCollection("reviews")
+review_data = review_data.sort((a, b) => a.data.order - b.data.order)
+
+
+/* // ON CLICK LOGIC
+const [currentIndex, setCurrentIndex] = useState(0);
+// Function to go to the next review
+const nextReview = () => {
+  setCurrentIndex((prevIndex) =>
+    prevIndex === review_data.length - 1 ? 0 : prevIndex + 1
+  );
+};
+
+// Function to go to the previous review
+const prevReview = () => {
+  setCurrentIndex((prevIndex) =>
+    prevIndex === 0 ? review_data.length - 1 : prevIndex - 1
+  );
+}; */
+
+---
+
+<div class=" flex flex-col justify-center items-center w-[50%] gap-4 px-2 ">
+    <div class=" h-[60px] w-[100px] " >
+        <Picture 
+            source = "/icons/reviews.svg"
+            alternative_text = "review logo"
+        />
+    </div>
+    <h1 class=" uppercase font-serif text-[40px] text-[#3E5667]" >
+        reviews 
+    </h1>
+    <div class=" flex items-center justify-center gap-6" >
+        <button class=" h-8 w-14" >
+            <Picture 
+                source = "/icons/left_arrow.svg"
+                alternative_text = "left arrow"
+            />                
+        </button>
+        <div class=" flex flex-col gap-5 w-[500px] items-center justify-center " >
+            <p class=" font-sans text-[#3E5667] text-center font-semibold tracking-wide" >
+                { review_data[0].data.description }
+            </p>
+            <p class=" uppercase font-sans font-bold text-[#A9A39C] text-[18px] tracking-widest">
+                { review_data[0].data.title }
+            </p>
+        </div>
+        <button class=" h-8 w-14" >
+            <Picture 
+                source = "/icons/right_arrow.svg"
+                alternative_text = "left arrow"
+            />    
+        </button>
+    </div>
+</div>

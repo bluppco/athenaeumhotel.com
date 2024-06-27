@@ -1,11 +1,22 @@
 ---
 
+// IMPORT ASTRO COMPONENT
+import Image from "@/atoms/information/image/index.astro"
+import Info from "@/atoms/information/info/index.astro"
+
 // IMPORT ASTRO LAYOUTS
 import Layout from "@/layouts/layout/index.astro"
 
 // IMPORT ASTRO COMPONENTS
+import Awards from "@/components/home/awards/index.astro"
+import BookRoom from "@/components/book_room/index.astro"
+import Contact from "@/components/home/contact/index.astro"
+import Footer from "@/components/common/footer/index.astro"
 import Hero from "@/components/home/hero/index.astro"
+import Information_1 from "@/components/home/information_1/index.astro"
 import PrimaryHeader from "@/components/common/header/primary/index.astro"
+import Required from "@/components/home/required/index.astro"
+import Reviews from "@/components/common/reviews/index.astro"
 import SecondaryHeader from "@/components/common/header/secondary/index.astro"
 
 ---
@@ -15,11 +26,38 @@ import SecondaryHeader from "@/components/common/header/secondary/index.astro"
 	title="The Athenaeum Hotel | A Luxury 5 star hotel in Mayfair"
 >
 	<section class="bg-hero_image w-full h-screen bg-no-repeat bg-center bg-cover">
-		<div class="bg-black w-full h-screen bg-opacity-25 pt-2 flex flex-col items-center gap-2">
+		<div class="bg-black w-full h-screen bg-opacity-25 flex flex-col items-center gap-2 pt-4">
 			<PrimaryHeader />
 			<SecondaryHeader />
 			<Hero />
+			<div class=" mt-16" >
+				<BookRoom />
+			</div>
 		</div>
 	</section>
+	<Information_1 />
+	<div class="mt-10 mx-10 w-[90%] flex justify-around items-center gap-4 " >
+		 <Info
+            button_content = "EXPLORE RESIDENCES"
+            heading_content = "PRIVATE RESIDENCES AT THE ATHENAEUM"
+            paragraph_content = "Our luxurious private Residences offer ultimate privacy for discerning guests. They are ideal for families, groups and long-term stays. Abundantly spacious, all 18 apartments are fully-serviced with private entrance, fully equipped kitchens, living and dining areas as well as 24 hour In Room Dining for a true home-from-home experience."
+        />
+        <Image 
+
+            alternative_text1="Image" 
+            alternative_text2="Image" 
+            alternative_text3="Image" 
+            source1="/images/bed_image.jpeg" 
+            source2="/images/bed_image.jpeg" 
+            source3="/images/bed_image.jpeg" 
+
+        />
+    </div>
+    
+	<Awards />
+	<Contact />
+	<Required />
+	<Reviews />
+	<Footer />
 </Layout>
 

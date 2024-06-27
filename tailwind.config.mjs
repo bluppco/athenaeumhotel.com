@@ -4,14 +4,20 @@ export default {
 	theme: {
 		extend: {
 			//backgroundImage and textShadow are the custom styles for background image and text shadow
-			backgroundImage: { hero_image: "url('/images/hero-image.jpg')" },
+			backgroundImage: {
+				hero_image: "url('/images/hero-image.jpg')",
+				repeat_bg: "url('/images/repeat_bg.svg')",
+			},
 			textShadow: {
 				sm: "1px 1px 2px var(--tw-shadow-color)",
 				DEFAULT: "2px 2px 4px var(--tw-shadow-color)",
 				lg: "4px 4px 8px var(--tw-shadow-color)",
 				xl: "4px 4px 16px var(--tw-shadow-color)",
 			},
+			listStyleImage: {
+				diamond: 'url("/icons/diamond.svg")',
+			},
 		},
 	},
 	plugins: [],
-}
+};

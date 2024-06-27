@@ -1,0 +1,41 @@
+---
+
+// IMPORT ATOMS
+import Picture from "@/atoms/picture/index.astro"
+
+// DEFINE ASTRO PROPS
+const { 
+      
+    alternative_text1,
+    alternative_text2,
+    alternative_text3,
+    source1,
+    source2,
+    source3,
+
+ } = Astro.props
+
+---
+
+<div class=" flex h-[480px] w-[550px] mt-20" >
+    <div class=" h-[488px] w-[290px] m-2" >
+        <Picture 
+            source = {source1} 
+            alternative_text = {alternative_text1} 
+        />
+    </div>
+    <div>
+        <div class=" h-[240px] w-[240px] m-2 ">
+            <Picture 
+                source = {source2} 
+                alternative_text = {alternative_text2} 
+            />
+        </div>
+        <div class=" h-[240px] w-[240px] m-2">
+            <Picture 
+                source = {source3} 
+                alternative_text = {alternative_text3}
+            />
+        </div>
+    </div>
+</div>

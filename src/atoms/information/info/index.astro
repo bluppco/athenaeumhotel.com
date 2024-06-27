@@ -1,0 +1,32 @@
+---
+
+// IMPORT ASTRO ATOMS
+import Heading_One from "@/atoms/information/heading/heading_one/index.astro"
+import Paragraph from "@/atoms/information/paragraph/index.astro"
+import Primary_Button from "@/atoms/button/primary/index.astro"
+
+// DEFINE ASTRO PROPS
+
+const {
+     
+    button_content,
+    heading_content,
+    paragraph_content
+
+} = Astro.props
+
+---
+
+<div class=" flex flex-col gap-10 w-[448px] h-[448px] items-center mt-20">
+    <Heading_One>
+        { heading_content }
+    </Heading_One>
+    <Paragraph>
+        { paragraph_content }
+    </Paragraph>
+    <Primary_Button>
+        <p class=" tracking-wide" >
+            { button_content }
+        </p>
+    </Primary_Button>
+</div>
