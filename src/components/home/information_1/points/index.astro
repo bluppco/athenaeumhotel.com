@@ -1,0 +1,33 @@
+---
+
+// IMPORT PRIMARY BUTTON ATOM
+import Primary_Button from "@/atoms/button/primary/index.astro"
+
+---
+
+
+<div class=" bg-repeat_bg w-[320PX] h-[480PX] bg-repeat bg-cover pl-8">
+    <div class=" flex flex-col items-center justify-center gap-6 w-[80%] ">
+        <div class=" mt-12 p-1 h-auto border-y-2 border-white">
+            <p class=" text-white font-medium tracking-wide text-[2rem] font-serif leading-tight" >Are you in the Know ?</p>
+        </div>
+        <div class="" >
+            <ul class=" list-image-diamond marker:pt-1 space-y-4" >
+                <li class=" text-white text-[1rem] font-serif font-light" >
+                    Extra 15% off & our Best Online Rate
+                </li>
+                <li class=" text-white text-[1rem] font-serif font-light">
+                    Exclusive access to <span class=" text-gray-400 hover:text-yellow-400" >The View</span> 10th floor member’s style lounge
+                </li>
+                <li class=" text-white text-[1rem] font-serif font-light" >
+                    Flexible cancellation, if your plans change
+                </li>
+            </ul>
+        </div>
+        <Primary_Button>
+            <p class=" uppercase">
+                get this offer 
+            </p>
+        </Primary_Button>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+---
+
+import { getCollection } from "astro:content"
+
+// IMPORT AWARD COLLECTION
+let award_data = await getCollection("awards")
+award_data = award_data.sort((a, b) => a.data.order - b.data.order)
+
+// IMPORT ASTRO ATOMS
+import Picture from "@/atoms/picture/index.astro"
+
+---
+
+<div class="w-full flex items-center justify-center mt-[100px]" >
+    <div class="flex justify-around items-center w-[90%]">
+
+    {
+
+        award_data.map(( award ) => (
+            <div class=" group flex flex-col items-center justify-around w-[200px]" >
+                <div class="w-[120px] pb-4 aspect-auto group-hover:scale-150 transition-transform duration-500">
+                    <Picture
+                        source={ award.data.image }
+                        alternative_text="Awards"
+                    />
+                </div>
+                {
+
+					award.data.show.map( ( content, content_index ) => (
+				        <div class="py-2 text-center invisible group-hover:visible">							
+							<h2 class=" text-gray-600 text-[18px] font-semibold" >{ content.heading }</h2>
+                            <p class=" text-gray-600 text-[12px]" >{ content.paragraph }</p>						
+						</div>
+					))
+
+				}
+                
+            </div>
+        ))
+
+    }
+
+    </div>
+</div>

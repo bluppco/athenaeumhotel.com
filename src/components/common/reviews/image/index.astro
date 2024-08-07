@@ -1,0 +1,22 @@
+---
+
+// IMPORT PICTURE ATOM
+import Picture from "@/atoms/picture/index.astro"
+
+// ASTRO PROPS
+const {
+     
+    alternative_text,
+    source
+
+} = Astro.props
+
+---
+<div class=" w-[49%] " >
+    <div class=" h-[30rem] w-[100%]" >
+        <Picture 
+            source = { source }
+            alternative_text = { alternative_text }
+        />
+    </div>
+</div>

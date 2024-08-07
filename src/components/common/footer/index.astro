@@ -1,0 +1,59 @@
+---
+
+// IMPORT ASTRO ATOMS
+import Picture from "@/atoms/picture/index.astro"
+
+---
+
+<div class="w-full mt-[40px]" >
+    <div class=" bg-repeat_bg h-[380px] flex justify-around items-center" >
+        <div class=" flex flex-col justify-center items-start gap-4">
+           <h1 class=" font-serif text-[24px] text-[#DBD5CD] ">
+                THE ATHENAEUM
+           </h1>
+
+           <ul class=" text-white font-sans font-semibold text-[18px] " >
+                <li>116 Piccadilly</li>
+                <li>Mayfair</li>
+                <li>London W1J 7BJ</li>
+           </ul>
+           
+           <ul class=" text-white font-sans font-semibold text-[18px]" >
+                <li>T: <span class=" hover:text-yellow-600 ">+44 (0)20 7499 3464</span></li>
+                <li>E: <span class=" hover:text-yellow-600 ">@athenaeumhotel.com</span></li>
+           </ul>
+
+        </div>
+        <div>
+            <ul class=" text-white font-sans font-semibold text-[18px] space-y-3" >
+                <li>NEWSLETTER SIGN UP</li>
+                <li>ABOUT</li>
+                <li>LEGAL</li>
+                <li>FAQs</li>
+                <li>CAREERS</li>
+                <li>SITEMAP</li>
+                <li>ATHENAEUM AWARDS</li>
+           </ul>
+        </div>
+         <div>
+            <ul class=" text-white font-sans font-semibold text-[18px] space-y-3" >
+                <li>CONTACT US</li>
+                <li>BLOG</li>
+                <li>ENVIRONMENTAL SOCIAL GOVERNANCE</li>
+                <li>POLICY POLICY</li>
+                <li>COOKIE POLICY</li>
+                <li>PRESS AND MEDIA</li>
+                <li>DOGS FRIENDLY HOTEL</li>
+           </ul>
+        </div>
+        <div class=" w-[200px] " >
+            <Picture
+                source = "/logo/footer-logo.svg"
+                alternative_text = "Athenaeum Hotel"
+            />
+        </div>
+    </div>
+    <div class=" bg-[#3E5667] h-[80px]">
+
+    </div>
+</div>

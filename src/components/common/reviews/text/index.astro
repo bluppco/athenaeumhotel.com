@@ -1,0 +1,28 @@
+---
+
+// IMPORT PICTURE ATOM
+import Picture from "@/atoms/picture/index.astro"  
+
+// IMPORT ASTRO COLLECTION
+import { getCollection } from "astro:content";
+
+// IMPORT SLIDER COMPONENT
+import Slider from "@/components/common/reviews/text/carousel/index";
+
+// IMPORT REVIEW COLLECTION
+let review_data = await getCollection("reviews")
+review_data = review_data.sort((a, b) => a.data.order - b.data.order)
+
+---
+<div class=" flex flex-col justify-center items-center w-[50%] gap-4 px-2 ">
+    <div class=" h-[60px] w-[100px] " >
+        <Picture 
+            source = "/icons/reviews.svg"
+            alternative_text = "review logo"
+        />
+    </div>
+    <h1 class=" uppercase font-serif text-[40px] text-[#3E5667]" >
+        reviews 
+    </h1>
+    <Slider review_data={review_data} client:load />
+</div>

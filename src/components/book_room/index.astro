@@ -1,0 +1,81 @@
+---
+
+// IMPORT ASTRO ATOMS
+
+// DEFAULT STYLED CONTAINER FOR BOOKING OPTIONS
+import Container from "@/atoms/book_room/container/index.astro"
+
+import Picture from "@/atoms/picture/index.astro"
+import Primary_Button from "@/atoms/button/primary/index.astro"
+import Secondary_Button from "@/atoms/button/secondary/index.astro"
+import Text from "@/atoms/book_room/text/index.astro"
+
+---
+
+<div class=" flex justify-around items-center w-[1500px] gap-5">
+    <Container>
+        <Text>
+            Book a stay
+        </Text>
+        <div class=" h-6 w-6">
+            <Picture 
+                source="/icons/down_arrow.svg" 
+                alternative_text = "Down Arrow" 
+            />
+        </div>
+    </Container>
+    <Container>
+        <Text>
+            Arrival
+        </Text>
+        <div class=" h-6 w-6">
+            <Picture 
+                source="/icons/calender.svg" 
+                alternative_text = "Down Arrow" 
+            />
+        </div>
+    </Container>
+    <Container>
+        <Text>
+            Departure
+        </Text>
+        <div class=" h-6 w-6">
+            <Picture 
+                source="/icons/calender.svg" 
+                alternative_text = "Down Arrow" 
+            />
+        </div>
+    </Container>
+    <Container>
+        <Text>
+            Guest
+        </Text>
+        <div class=" h-6 w-6">
+            <Picture 
+                source="/icons/down_arrow.svg" 
+                alternative_text = "Down Arrow" 
+            />
+        </div>
+    </Container>
+    <Container>
+       <Text>
+            Rooms
+       </Text>
+        <div class=" h-6 w-6">
+            <Picture 
+                source="/icons/down_arrow.svg" 
+                alternative_text = "Down Arrow" 
+            />
+        </div>
+    </Container>
+    <Primary_Button>
+        <p class=" uppercase">
+            Book Now
+        </p>
+    </Primary_Button>
+    <Secondary_Button>
+        <p class=" uppercase text-[0.8rem]">
+            Best rates when you book direct
+        </p>
+    </Secondary_Button>
+</div>

@@ -1,0 +1,17 @@
+---
+
+// GET ASTRO PROPS
+const {
+
+    alternative_text,
+    source,
+
+} = Astro.props
+
+---
+
+<img
+    alt={ alternative_text }
+    class="h-full w-full object-cover"
+    src={ source }
+/>
